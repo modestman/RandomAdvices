@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KPB-qE-24P">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="qkn-f8-NAc">
+            <objects>
+                <viewController id="DL2-3h-SOH" customClass="RootViewController" customModule="RandomAdvices" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OgX-he-Hdh"/>
+                        <viewControllerLayoutGuide type="bottom" id="uEo-l7-Skb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DtT-4G-jM9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAb-bu-Oni">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uEo-l7-Skb" firstAttribute="top" secondItem="FAb-bu-Oni" secondAttribute="bottom" id="5Tv-Tj-QXz"/>
+                            <constraint firstItem="FAb-bu-Oni" firstAttribute="leading" secondItem="DtT-4G-jM9" secondAttribute="leading" id="VXc-Gi-6Yy"/>
+                            <constraint firstItem="FAb-bu-Oni" firstAttribute="top" secondItem="OgX-he-Hdh" secondAttribute="bottom" id="qK3-wB-wdR"/>
+                            <constraint firstAttribute="trailing" secondItem="FAb-bu-Oni" secondAttribute="trailing" id="ss8-r6-yLW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fkh-aO-Z7l">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="duP-xr-YOU">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Advice"/>
+                                <segment title="Favorites"/>
+                            </segments>
+                            <connections>
+                                <action selector="changeSegmentedControl:" destination="DL2-3h-SOH" eventType="valueChanged" id="OJw-IG-XNO"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerView" destination="FAb-bu-Oni" id="FJ9-NW-1PX"/>
+                        <outlet property="segmentedControl" destination="duP-xr-YOU" id="VLE-VR-RwF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oap-x3-n3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.40000000000001" y="11.244377811094454"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="Iz5-wQ-buk">
+            <objects>
+                <tableViewController storyboardIdentifier="FavoritesViewController" id="kfR-A8-tOn" customClass="FavoritesViewController" customModule="RandomAdvices" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uAZ-FT-T9d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FavAdviceCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavAdviceCell" id="6VA-O8-qoA" customClass="FavAdviceCell" customModule="RandomAdvices" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6VA-O8-qoA" id="dGm-2e-mbi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wl-g1-1Oo">
+                                            <rect key="frame" x="15" y="13" width="345" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="4wl-g1-1Oo" secondAttribute="trailing" constant="15" id="6fJ-Ot-cpv"/>
+                                        <constraint firstAttribute="bottom" secondItem="4wl-g1-1Oo" secondAttribute="bottom" constant="13.5" id="Hg7-dB-i3b"/>
+                                        <constraint firstItem="4wl-g1-1Oo" firstAttribute="leading" secondItem="dGm-2e-mbi" secondAttribute="leading" constant="15" id="bqx-bG-7hd"/>
+                                        <constraint firstItem="4wl-g1-1Oo" firstAttribute="top" secondItem="dGm-2e-mbi" secondAttribute="top" constant="13" id="fQe-nR-dyT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="adviceLabel" destination="4wl-g1-1Oo" id="kdu-0I-kIK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kfR-A8-tOn" id="hQV-ic-hOT"/>
+                            <outlet property="delegate" destination="kfR-A8-tOn" id="7v9-Sb-Y6d"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s84-ME-yft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="451"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m7L-UJ-nqM">
+            <objects>
+                <navigationController id="KPB-qE-24P" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GD2-oL-VgM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DL2-3h-SOH" kind="relationship" relationship="rootViewController" id="buI-K6-sGC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVC-Zo-lP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1011" y="13"/>
+        </scene>
+        <!--Advice View Controller-->
+        <scene sceneID="oap-cm-8nj">
+            <objects>
+                <viewController storyboardIdentifier="AdviceViewController" id="R9S-HA-mKH" customClass="AdviceViewController" customModule="RandomAdvices" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ISX-87-0iL"/>
+                        <viewControllerLayoutGuide type="bottom" id="QRR-kG-b7b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ryk-qe-qqb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3e-wE-qNV">
+                                <rect key="frame" x="20" y="271" width="335" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hc-et-A5y">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0pH-FJ-WpW"/>
+                                    <constraint firstAttribute="height" constant="40" id="LZP-yW-UfO"/>
+                                </constraints>
+                                <state key="normal" image="favorites"/>
+                                <connections>
+                                    <action selector="favoriteTouched:" destination="R9S-HA-mKH" eventType="touchUpInside" id="AdQ-ji-lkE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcC-pF-bDJ">
+                                <rect key="frame" x="315" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="EGz-mM-yqK"/>
+                                    <constraint firstAttribute="height" constant="40" id="d9c-1F-j1O"/>
+                                </constraints>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="updateAdviceTouched:" destination="R9S-HA-mKH" eventType="touchUpInside" id="VP0-4x-jmg"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bh4-sb-47z">
+                                <rect key="frame" x="112" y="326.5" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="hBl-24-raa"/>
+                                </constraints>
+                                <color key="trackTintColor" white="0.93671332465277779" alpha="1" colorSpace="calibratedWhite"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bh4-sb-47z" firstAttribute="top" secondItem="d3e-wE-qNV" secondAttribute="bottom" constant="30" id="0F6-Bl-Asp"/>
+                            <constraint firstItem="dcC-pF-bDJ" firstAttribute="top" secondItem="Ryk-qe-qqb" secondAttribute="top" constant="20" id="9ci-eP-Hfi"/>
+                            <constraint firstItem="9Hc-et-A5y" firstAttribute="top" secondItem="Ryk-qe-qqb" secondAttribute="top" constant="20" id="Au2-tp-JJD"/>
+                            <constraint firstItem="d3e-wE-qNV" firstAttribute="leading" secondItem="Ryk-qe-qqb" secondAttribute="leading" constant="20" id="GvV-r6-v0d"/>
+                            <constraint firstItem="bh4-sb-47z" firstAttribute="centerX" secondItem="Ryk-qe-qqb" secondAttribute="centerX" id="Oad-ga-P2x"/>
+                            <constraint firstAttribute="trailing" secondItem="d3e-wE-qNV" secondAttribute="trailing" constant="20" id="XXq-fH-UlJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dcC-pF-bDJ" secondAttribute="trailing" constant="20" id="Y9G-5o-7Cn"/>
+                            <constraint firstItem="9Hc-et-A5y" firstAttribute="leading" secondItem="Ryk-qe-qqb" secondAttribute="leading" constant="20" id="YK4-QM-PSG"/>
+                            <constraint firstItem="d3e-wE-qNV" firstAttribute="centerY" secondItem="Ryk-qe-qqb" secondAttribute="centerY" constant="-50" id="yci-NZ-De0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="d3e-wE-qNV" id="AUP-jx-7YS"/>
+                        <outlet property="favoriteButton" destination="9Hc-et-A5y" id="fr2-iI-dlQ"/>
+                        <outlet property="progress" destination="bh4-sb-47z" id="RTS-Ir-hiB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBI-0J-CzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517.60000000000002" y="-219.04047976011995"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="favorites" width="32" height="32"/>
+        <image name="refresh" width="32" height="32"/>
+    </resources>
+</document>
